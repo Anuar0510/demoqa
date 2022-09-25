@@ -21,22 +21,22 @@ public class AutomationPracticeForm {
     void automationPracticeForm(){
         open("automation-practice-form");
         zoom(0.5);
-        $x("//input[@id='firstName']").setValue("Anuar");
-        $x("//input[@id='lastName']").setValue("Omar");
-        $x("//input[@id='userEmail']").setValue("omar051000@gmail.com");
-        $x("//div[@class='custom-control custom-radio custom-control-inline']").click();
-        $x("//input[@id='userNumber']").setValue("7064066838");
-        $x("//div[@class='react-datepicker__input-container']").click();
+        $("#firstName").setValue("Anuar");
+        $("#lastName").setValue("Omar");
+        $("#userEmail").setValue("omar051000@gmail.com");
+        $("#genterWrapper").$(byText("Male")).click();
+        $("#userNumber").setValue("7064066838");
+        $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("October");
         $(".react-datepicker__year-select").selectOption("2000");
         $(".react-datepicker__day--005:not(.react-datepicker__day--selected").click();
-        $x("//input[@id='subjectsInput']").setValue("Chemistry").sendKeys(Keys.ENTER);
+        $("#subjectsInput").setValue("Chemistry").pressEnter();
         $("#hobbiesWrapper").$(byText("Music")).click();
-        $x("//input[@id='uploadPicture']").setValue("C:\\Users\\AOmar\\IdeaProjects\\demo_qa_test\\src\\test\\java\\pictures\\bloger-sokratil-naruto-na-115-chasov-radi-devushki_16494393021767498187.jpg");
-        $x("//textarea[@id='currentAddress']").setValue("Country: Kazakhastan, City: Almaty, street:Abaya-34");
-        $x("//div[@id='state']").click();
+        $("#uploadPicture").uploadFromClasspath("1.jpg");
+        $("#currentAddress").setValue("Country: Kazakhastan, City: Almaty, street:Abaya-34");
+        $("#state").click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
-        $x("//div[@id='city']").click();
+        $("#city").click();
         $("#stateCity-wrapper").$(byText("Noida")).click();
         $("#submit").click();
 
@@ -47,7 +47,7 @@ public class AutomationPracticeForm {
                 text("05 October,2000"),
                 text("Chemistry"),
                 text("Music"),
-                text("bloger-sokratil-naruto-na-115-chasov-radi-devushki_16494393021767498187.jpg"),
+                text("1.jpg"),
                 text("Country: Kazakhastan, City: Almaty, street:Abaya-34"),
                 text("NCR Noida"));
     }
